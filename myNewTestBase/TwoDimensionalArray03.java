@@ -1,4 +1,4 @@
-package myNewTest;
+package myNewTestBase;
 
 public class TwoDimensionalArray03 {
     public static void main(String[] args) {

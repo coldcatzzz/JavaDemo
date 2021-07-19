@@ -1,4 +1,4 @@
-package myNewTest;
+package myNewTestBase;
 
 public class YangHui {
     public static void main(String[] args) {

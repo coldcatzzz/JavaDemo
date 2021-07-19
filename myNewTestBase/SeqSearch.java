@@ -1,4 +1,4 @@
-package myNewTest;
+package myNewTestBase;
 
 /*
 * 顺序查找

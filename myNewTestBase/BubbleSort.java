@@ -1,4 +1,4 @@
-package myNewTest;
+package myNewTestBase;
 
 /*
 * 冒泡排序
@@ -18,8 +18,8 @@ public class BubbleSort {
                 }
             }
         }
-        for (int j = 0; j<arr.length; j++){
-            System.out.print(arr[j] + " ");
+        for (int k = 0; k < arr.length; k++){
+            System.out.print(arr[k] + " ");
         }
     }
 }

@@ -1,4 +1,4 @@
-package myNewTest;
+package myNewTestBase;
 
 public class AddBubble {
     public static void main(String[] args) {
@@ -14,8 +14,8 @@ public class AddBubble {
             arr2[i] = arr[i];
             arr2[arr.length] = 4;
         }
-        for (int k = 0; k < arr2.length; k++){
-            System.out.println(arr2[k]);
+        for (int value : arr2) {
+            System.out.println(value);
         }
 
         System.out.println("----------------------");
@@ -32,8 +32,9 @@ public class AddBubble {
                     arr2[s + 1] = temp;
                 }
             }
-            System.out.println(arr2[j]);
         }
-        System.out.println(arr2[arr2.length - 1]);
+        for (int i : arr2) {
+            System.out.println(i);
+        }
     }
 }
