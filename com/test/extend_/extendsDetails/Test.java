@@ -14,5 +14,7 @@ public class Test {
         Father father = new Father();
         System.out.println(father.name);
         System.out.println(father.age);
+
+        son.so();
     }
 }

@@ -17,4 +17,13 @@ public class Son extends Father{
     public double getScore() {
         return score;
     }
+
+    public void fa(){
+        System.out.println("son fa()...");
+    }
+
+    public void so(){
+        System.out.println("so()...");
+        this.fa();
+    }
 }

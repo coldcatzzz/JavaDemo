@@ -17,4 +17,8 @@ public class Father {
         System.out.println("name:" + name + " age:" + age);
     }
 
+    public void fa(){
+        System.out.println("fa()...");
+    }
+
 }
