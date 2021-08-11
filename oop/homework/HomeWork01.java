@@ -3,9 +3,9 @@ package oop.homework;
 public class HomeWork01 {
     public static void main(String[] args) {
         Person[] persons = new Person[3];
-        persons[0] = new Person("jack", 10, "java");
+        persons[0] = new Person("jack", 60, "java");
         persons[1] = new Person("tom", 50, "php");
-        persons[2] = new Person("white", 30, "python");
+        persons[2] = new Person("white", 90, "python");
 
         for (Person p :persons
              ) {
@@ -17,10 +17,10 @@ public class HomeWork01 {
 
         for (int i = 0; i < persons.length - 1; i++) {
             for (int j = 0; j < persons.length - 1 - i; j++) {
-                if (persons[i].getAge() < persons[i + 1].getAge()){
-                    tmp = persons[i];
-                    persons[i] = persons[i + 1];
-                    persons[i + 1] = tmp;
+                if (persons[j].getAge() < persons[j + 1].getAge()){
+                    tmp = persons[j];
+                    persons[j] = persons[j + 1];
+                    persons[j + 1] = tmp;
                 }
             }
         }
