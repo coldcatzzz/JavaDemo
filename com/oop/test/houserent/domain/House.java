@@ -72,7 +72,7 @@ public class House {
     @Override
     public String toString() {
         return id +
-                "\t" + name +
+                "\t\t" + name +
                 "\t" + phone +
                 "\t" + address +
                 "\t" + rent +
