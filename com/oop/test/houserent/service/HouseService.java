@@ -56,4 +56,15 @@ public class HouseService {
         houses[-- houseNums] = null;   //把当前存在房屋信息的最后一个置空（不一定是数组最后一个）
         return true;
     }
+
+    //find 查找房屋信息
+    public House find(int findKey){
+        for (int i = 0; i < houseNums; i++) {
+            if (findKey == houses[i].getId()){
+                return houses[i];
+            }
+        }
+        return null;
+    }
+
 }

@@ -12,7 +12,7 @@ public class HouseView {
     //显示房屋列表
     public void listHouse(){
         System.out.println("---------------房屋列表---------------");
-        System.out.println("编号\t房主\t电话\t地址\t月租\t状态(未出租/已出租)");
+        System.out.println("编号\t姓名\t电话\t地址\t月租\t状态(未出租/已出租)");
         House[] houses = houseService.list();
         for (int i = 0; i < houses.length; i++) {
             if (houses[i] != null){
@@ -66,17 +66,70 @@ public class HouseView {
     }
 
     //编写findHouse() 接收输入的id，调用service的find()
-    public void findHouse(int findId){
-        int index = 0;
+    public void findHouse(){
         System.out.println("---------------查找房屋信息---------------");
-        System.out.println("请输入查找的房屋的编号(-1退出):");
+        System.out.println("请输入查找的房屋的编号:");
         int findKey = Utility.readInt();
+        House house = houseService.find(findKey);
+        if (house != null){
+            System.out.println(house);
+        }else {
+            System.out.println("---------------未找到查找房屋信息---------------");
+        }
 
-        if (findKey == -1){
-            System.out.println("---------------放弃查找房屋信息---------------");
+
+    }
+
+    //修改房屋信息
+    public void updateHouse(){
+        System.out.println("---------------修改房屋信息---------------");
+        System.out.println("---------------请选择待修改房屋编号(-1表示退出)---------------");
+        int updateId = Utility.readInt();
+
+        if (updateId == -1){
+            System.out.println("---------------放弃修改房屋信息---------------");
             return;
         }
 
+        House house = houseService.find(updateId);
+        if (house == null){
+            System.out.println("---------------该房屋不存在---------------");
+        }
+
+        //姓名
+        System.out.println("姓名:(" + house.getName() + "): ");
+        String name = Utility.readString(8,"");
+        if (!"".equals(name)){
+            house.setName(name);
+        }
+
+        //电话
+        System.out.println("电话:(" + house.getPhone() + "): ");
+        String phone = Utility.readString(8,"");
+        if (!"".equals(phone)){
+            house.setName(phone);
+        }
+
+        //地址
+        System.out.println("地址:(" + house.getAddress() + "): ");
+        String address = Utility.readString(8,"");
+        if (!"".equals(address)){
+            house.setName(address);
+        }
+
+        //月租
+        System.out.println("月租:(" + house.getRent() + "): ");
+        String rent = Utility.readString(8,"");
+        if (!"".equals(rent)){
+            house.setName(rent);
+        }
+
+        //状态(出租/未出租)
+        System.out.println("状态:(" + house.getState() + "): ");
+        String state = Utility.readString(8,"");
+        if (!"".equals(state)){
+            house.setName(state);
+        }
 
     }
 
@@ -105,13 +158,13 @@ public class HouseView {
                     addHouse();
                     break;
                 case "2":
-                    System.out.println("查 找");
+                    findHouse();
                     break;
                 case "3":
                     delHouse();
                     break;
                 case "4":
-                    System.out.println("修 改");
+                    updateHouse();
                     break;
                 case "5":
                     listHouse();
