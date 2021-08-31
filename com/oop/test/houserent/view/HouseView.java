@@ -91,9 +91,11 @@ public class HouseView {
             return;
         }
 
+        //根据输入的updateId，查找对象，确认修改哪个房屋信息
         House house = houseService.find(updateId);
         if (house == null){
             System.out.println("---------------该房屋不存在---------------");
+            return;
         }
 
         //姓名
@@ -105,30 +107,30 @@ public class HouseView {
 
         //电话
         System.out.println("电话:(" + house.getPhone() + "): ");
-        String phone = Utility.readString(8,"");
+        String phone = Utility.readString(8,house.getPhone());
         if (!"".equals(phone)){
-            house.setName(phone);
+            house.setPhone(phone);
         }
 
         //地址
         System.out.println("地址:(" + house.getAddress() + "): ");
         String address = Utility.readString(8,"");
         if (!"".equals(address)){
-            house.setName(address);
+            house.setAddress(address);
         }
 
         //月租
         System.out.println("月租:(" + house.getRent() + "): ");
-        String rent = Utility.readString(8,"");
-        if (!"".equals(rent)){
-            house.setName(rent);
+        int rent = Utility.readInt(-1);
+        if (rent != -1){
+            house.setRent(rent);
         }
 
         //状态(出租/未出租)
         System.out.println("状态:(" + house.getState() + "): ");
         String state = Utility.readString(8,"");
         if (!"".equals(state)){
-            house.setName(state);
+            house.setState(state);
         }
 
     }
