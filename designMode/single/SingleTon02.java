@@ -32,8 +32,6 @@ class Cat{
 
     @Override
     public String toString() {
-        return "Cat{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 }
